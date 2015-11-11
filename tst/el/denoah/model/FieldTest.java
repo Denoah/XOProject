@@ -1,7 +1,6 @@
 package el.denoah.model;
 
 import el.denoah.model.exceptions.InvalidPointException;
-import el.denoah.model.exceptions.PointAlreadyOccupiedException;
 import org.junit.Test;
 
 import java.awt.*;
@@ -12,7 +11,7 @@ public class FieldTest {
 
     @Test
     public void testGetSize() throws Exception {
-        Field field = new Field();
+        Field field = new Field(3);
 
         final int fieldSize = 3;
 
@@ -21,7 +20,7 @@ public class FieldTest {
 
     @Test
     public void testSetFigure() throws Exception {
-        Field field = new Field();
+        Field field = new Field(3);
 
         Figure figure = Figure.O;
 
@@ -34,7 +33,7 @@ public class FieldTest {
 
     @Test
     public void testGetFigureWhenFigureIsNotSet() throws Exception {
-        Field field = new Field();
+        Field field = new Field(3);
 
         Point point = new Point(0,0);
 
@@ -45,7 +44,7 @@ public class FieldTest {
 
     @Test
     public void testGetFigureWhenXLessThenZero() throws Exception {
-        Field field = new Field();
+        Field field = new Field(3);
 
         Point point = new Point(-1,0);
 
@@ -59,7 +58,7 @@ public class FieldTest {
 
     @Test
     public void testGetFigureWhenYLessThenZero() throws Exception {
-        Field field = new Field();
+        Field field = new Field(3);
 
         Point point = new Point(0,-1);
 
@@ -73,7 +72,7 @@ public class FieldTest {
 
     @Test
     public void testGetFigureWhenXMoreThenSize() throws Exception {
-        Field field = new Field();
+        Field field = new Field(3);
 
         Point point = new Point(4,0);
 
@@ -87,7 +86,7 @@ public class FieldTest {
 
     @Test
     public void testGetFigureWhenYMoreThenSize() throws Exception {
-        Field field = new Field();
+        Field field = new Field(3);
 
         Point point = new Point(0,5);
 
