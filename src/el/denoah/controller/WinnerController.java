@@ -49,7 +49,7 @@ public class WinnerController {
                     return new Point(p.x+1, p.y-1);
                 }
             })) {
-                return field.getFigure(new Point(0, 0));
+                return field.getFigure(new Point(1, 1));
             }
 
 
@@ -67,11 +67,14 @@ public class WinnerController {
         try {
             currentFigure = field.getFigure(currentPoint);
             nextFigure = field.getFigure(nextPoint);
+
+            if (currentFigure == null) return false;
+
         } catch (InvalidPointException e) {
             return true;
         }
 
-        if (currentFigure == null) return false;
+
 
         if (currentFigure != nextFigure) {
             return false;
